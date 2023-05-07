@@ -5,9 +5,7 @@ from flask import Flask,request,app,jsonify,url_for,render_template
 import numpy as np
 import pandas as pd
 
-application=Flask(__name__)
-
-app=application
+app=Flask(__name__)
 ## Load the model
 regmodel=pickle.load(open('regmodel.pkl','rb'))
 scalar=pickle.load(open('scaling.pkl','rb'))
@@ -36,5 +34,5 @@ def predict():
 
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")
+    app.run(debug=True)
    
